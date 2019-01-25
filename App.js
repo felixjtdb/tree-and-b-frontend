@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Tree from './components/Tree';
 
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.defaultSpacing}>
+        <Text style={styles.titleText}>App Running</Text>
+        <Tree description={"I am a big ol tree"}/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
+  defaultSpacing: {
+    flex: 1,
+    flexDirection: 'row',
+    top: 50
+  }
 });
