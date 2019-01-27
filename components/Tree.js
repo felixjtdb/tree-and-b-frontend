@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image  } from 'react-native';
 
 export default class Tree extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.bigblue}> {this.props.description} </Text>
+        <Image source={this.props.imageURL}/>
+        <Text style={styles.bigblue} >{this.props.name} </Text>
+        <Text> {this.props.description}> </Text>
       </View>
     );
   }
