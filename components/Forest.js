@@ -8,12 +8,12 @@ const numColumns = 3;
 const testForest =
   [ { id : 1,
       name: 'Oak',
-      imageURL: 'https://www.fast-growing-trees.com/images/P/Live-Oak-Tree-450w.jpg:',
+      imageURL: 'https://www.fast-growing-trees.com/images/P/Live-Oak-Tree-450w.jpg',
       description: "I'm a big ol tree"
     },
     { id : 2,
       name: 'BrOak',
-      imageURL: "https://www.fast-growing-trees.com/images/P/Live-Oak-Tree-450w.jpg:",
+      imageURL: "http://www.irishtreesociety.com/wp-content/uploads/irish-tree-society-feature.jpg",
       description: "me too!"
     }
   ]
