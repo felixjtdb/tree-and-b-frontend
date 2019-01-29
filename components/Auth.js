@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
 import { AuthSession } from 'expo';
+import { auth0ClientId, auth0Domain } from 'react-native-dotenv';
 import jwtDecoder from 'jwt-decode';
 
 // Need to be extracted into environment variables
-const auth0ClientId = 'aZubr17XYtkDNEpHo6aT8yUkhCHJaBbp'
-const auth0Domain = 'https://tree-and-b.eu.auth0.com'
+
 
 // Creates a query string
 function toQueryString(params) {
