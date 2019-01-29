@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { AuthSession } from 'expo';
 import jwtDecoder from 'jwt-decode';
 import Tree from './components/Tree';
@@ -29,7 +29,7 @@ export default class App extends Component {
     authUrl: `${auth0Domain}/authorize` + toQueryString({
       client_id: auth0ClientId,
       response_type: 'token',
-      scope: 'openid name',
+      scope: 'openid profile name',
       redirect_uri: redirectUrl,
     }),
   });
@@ -48,9 +48,9 @@ handleParams = (responseObj) => {
   }
   const encodedToken = responseObj.id_token;
   const decodedToken = jwtDecoder(encodedToken);
-  const username = decodedToken.name;
-  this.setState({ username });
-  }
+  const user_id = decodedToken.name;
+  this.setState({ user_id });
+}
 
 
   render() {
@@ -58,24 +58,14 @@ handleParams = (responseObj) => {
       <View>
       {this.state.username !== undefined ?
         <Forest /> :
+        <View>
         <Text>Auth0 login</Text>
-        <Button
-          title="Login with Auth0"
-          onPress={this._loginWithAuth0}
-          />
+        <Button title="Login with Auth0" onPress={this._loginWithAuth0} />
+        </View>
+      }
       </View>
     );
   }
-}
 
-const styles = StyleSheet.create({
-  titleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  defaultSpacing: {
-    flex: 1,
-    flexDirection: 'row',
-    top: 50
-  }
-});
+  
+}
