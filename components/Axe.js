@@ -18,8 +18,8 @@ export default class Axe extends Component {
 
   render() {
     return (
-        <View>
-          <TouchableHighlight onPress={this.increaseCount} style={styles.axe_container}>
+        <View style={styles.axe_container}>
+          <TouchableHighlight onPress={this.increaseCount}>
             <Image
               style={styles.axe}
               resizeMode={"stretch"}
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   },
   axe_container: {
     flex: 1,
-    justifyContent: 'flex-end'
+    flexDirection: 'row',
+    justifyContent: 'flex-start'
   }
-
 });

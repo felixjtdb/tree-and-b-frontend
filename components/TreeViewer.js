@@ -22,6 +22,7 @@ export default class TreeViewer extends Component {
 
 const styles = StyleSheet.create({
   axe_water_container: {
+    flex: 1,
     flexDirection: "row"
   }
 });

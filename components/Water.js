@@ -15,7 +15,6 @@ export default class Axe extends Component {
 
   render() {
     return (
-      <View>
         <View style={styles.water_container}>
           <TouchableHighlight onPress={this.increaseCount}>
             <Image
@@ -24,9 +23,9 @@ export default class Axe extends Component {
               source={water_image}
             />
           </TouchableHighlight>
+          <Text> {this.state.count} </Text>
         </View>
-        <Text> {this.state.count} </Text>
-      </View>
+
     );
   }
 }
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
   },
   water_container: {
       flex: 1,
+      flexDirection: 'row',
       justifyContent: 'flex-end'
   }
-
 });

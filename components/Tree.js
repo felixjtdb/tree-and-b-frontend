@@ -23,13 +23,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
+    paddingTop: Constants.statusBarHeight + 100,
     backgroundColor: '#ecf0f1',
   },
   image: {
-    height: 80,
-    width: 80,
-    borderRadius: 60,
+    height: 150,
+    width: 150,
+    borderRadius: 150,
   },
   name: {
     color: 'red'
