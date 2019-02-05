@@ -13,6 +13,7 @@ export default class Tree extends Component {
         />
         <Text style={styles.name}> {this.props.name} </Text>
         <Text style={styles.description}> {this.props.description} </Text>
+        <Text style={styles.location}> {this.props.location} </Text>
       </View>
     );
   }
