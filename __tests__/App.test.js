@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import App from '../App.js'
-console.log('----- worked -----');
 import renderer from 'react-test-renderer';
 
 test('renders correctly', () => {
