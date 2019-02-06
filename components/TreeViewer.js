@@ -8,9 +8,11 @@ export default class TreeViewer extends Component {
 
   render() {
     return (
-      <View>
-        <Tree name={this.props.name} imageURL={this.props.imageURL} description={this.props.description} />
-        <View stlyes={styles.axe_water_container}>
+      <View style={styles.treeviewer}>
+        <View>
+          <Tree name={this.props.name} imageURL={this.props.imageURL} description={this.props.description} />
+        </View>
+        <View stlye={styles.axe_water_container}>
           <Axe />
           <Water />
         </View>
@@ -22,7 +24,12 @@ export default class TreeViewer extends Component {
 
 const styles = StyleSheet.create({
   axe_water_container: {
-    flex: 1,
-    flexDirection: "row"
+    flex: 2,
+    flexDirection: 'column',
+    alignContent: 'center',
+  },
+  treeviewer: {
+    flexDirection: 'row',
+    alignContent: 'center',
   }
 });

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, AppRegistry, Image, TouchableHighlight, Text, View } from 'react-native'
+import { StyleSheet, AppRegistry, Image, TouchableOpacity, Text, View, Dimensions } from 'react-native'
 import water_image from './images/Water_image.png'
+
 export default class Axe extends Component {
   constructor(props) {
     super(props)
@@ -10,19 +11,21 @@ export default class Axe extends Component {
   }
 
   increaseCount = () => {
-    this.setState({count : this.state.count+1})
+    this.setState(
+      { count : this.state.count+1 }
+    )
   }
 
   render() {
     return (
-        <View style={styles.water_container}>
-          <TouchableHighlight onPress={this.increaseCount}>
+        <View>
+          <TouchableOpacity onPress={this.increaseCount}>
             <Image
+            source={water_image}
               style={styles.water}
               resizeMode={"stretch"}
-              source={water_image}
             />
-          </TouchableHighlight>
+          </TouchableOpacity>
           <Text> {this.state.count} </Text>
         </View>
 
@@ -36,11 +39,6 @@ const styles = StyleSheet.create({
   water: {
     height: 80,
     width: 80,
-    borderRadius: 60
-  },
-  water_container: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'flex-end'
+    borderRadius: 80,
   }
 });

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, AppRegistry, Image, TouchableHighlight, Text, View } from 'react-native'
+import { StyleSheet, AppRegistry, Image, TouchableOpacity, Text, View, Dimensions } from 'react-native'
 import axe_image from './images/Axe_image.png'
+
+const { width, height } = Dimensions.get('window');
 
 export default class Axe extends Component {
   constructor(props) {
@@ -12,20 +14,21 @@ export default class Axe extends Component {
 
   increaseCount = () => {
     this.setState(
-      { count: this.state.count + 1 }
+      { count: this.state.count+1 }
     )
   }
 
   render() {
     return (
-        <View style={styles.axe_container}>
-          <TouchableHighlight onPress={this.increaseCount}>
+
+        <View styles={styles.axe_container}>
+          <TouchableOpacity onPress={this.increaseCount}>
             <Image
+              source={axe_image}
               style={styles.axe}
               resizeMode={"stretch"}
-              source={axe_image}
             />
-          </TouchableHighlight>
+          </TouchableOpacity>
           <Text> {this.state.count} </Text>
         </View>
     );
@@ -38,11 +41,10 @@ const styles = StyleSheet.create({
   axe: {
     height: 80,
     width: 80,
-    borderRadius: 60,
-    justifyContent: 'flex-start'
+    borderRadius: 80
   },
   axe_container: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     justifyContent: 'flex-start'
   }

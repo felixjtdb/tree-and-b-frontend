@@ -5,3 +5,7 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+metro-cache
+v8-compile-cache-0
+adb.0.log
+haste-map-metro-*
