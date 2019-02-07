@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ecf0f1",
+      "flex": 1,
+      "justifyContent": "center",
+      "paddingTop": 120,
+    }
+  }
+>
+  <Image
+    resizeMode="cover"
+    source={
+      Object {
+        "uri": "test_imageURL",
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 150,
+        "height": 150,
+        "width": 150,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+     
+    test_tree
+     
+  </Text>
+  <Text
+    style={Object {}}
+  >
+     
+    test_description
+     
+  </Text>
+  <Text
+    style={Object {}}
+  >
+     
+    test_location
+     
+  </Text>
+</View>
+`;
