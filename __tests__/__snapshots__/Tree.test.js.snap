@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`render matches snapshot 1`] = `
 <View
   style={
     Object {
@@ -8,7 +8,7 @@ exports[`renders correctly 1`] = `
       "backgroundColor": "#ecf0f1",
       "flex": 1,
       "justifyContent": "center",
-      "paddingTop": 120,
+      "paddingTop": 20,
     }
   }
 >

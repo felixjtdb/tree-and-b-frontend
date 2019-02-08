@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image  } from 'react-native';
 import { Constants } from 'expo'
 
+
 export default class Tree extends Component {
   render() {
     return (
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight + 100,
+    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
   },
   image: {
