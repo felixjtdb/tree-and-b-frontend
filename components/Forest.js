@@ -14,18 +14,24 @@ export default class Forest extends Component {
     }
   };
 
+  renderItem(item) {
+    return (
+      <Tree name={item.name} imageURL={item.imageURL} description={item.description} styling={styles.treeContainer}/>
+    )
+  }
+
   render() {
     return (
-      <React.Fragment key='Forest'>
-        <Navbar navigation={this.props.navigation}/>
+      <React.Fragment>
+        <List style={styles.list}>
           <FlatList
             data={this.state.trees}
-            renderItem={({ item }) =>
-              <Tree name={item.name} imageURL={item.imageURL} description={item.description} styling={styles.treeContainer}/>
-            }
+            renderItem={({ item }) => this.renderItem(item)}
             scrollable={true}
             style={styles.list}
           />
+        </List>
+        <Navbar navigation={this.props.navigation}/>
       </React.Fragment>
     );
   }
@@ -35,6 +41,7 @@ const styles = StyleSheet.create({
   list: {
     zIndex: 1,
     alignContent: 'center',
+    marginBottom: Dimensions.get('window').height / 10
   },
   treeContainer: {
     alignItems: 'center',
