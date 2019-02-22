@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, AppRegistry, Dimensions  } from 'react-native';
-import { Constants } from 'expo'
-
 
 export default class Tree extends Component {
   render() {
     return (
-      <View style={ [styles.container, {height: this.props.height, width: this.props.width}] }>
+      <React.Fragment>
         <Image
           style={styles.image}
           resizeMode={"cover"}
@@ -15,7 +13,7 @@ export default class Tree extends Component {
         <Text style={styles.name}> {this.props.name} </Text>
         <Text style={styles.description}> {this.props.description} </Text>
         <Text style={styles.location}> {this.props.location} </Text>
-      </View>
+      </React.Fragment>
     );
   }
 }
@@ -23,18 +21,11 @@ export default class Tree extends Component {
 AppRegistry.registerComponent('App', () => App)
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ecf0f1',
-    height:  Dimensions.get('window').height / 2,
-    width: Dimensions.get('window').width / 2,
-  },
   image: {
     margin: 'auto',
-    height:  Dimensions.get('window').height / 2,
-    width: Dimensions.get('window').width / 2,
-    borderRadius: Dimensions.get('window').height / 2,
+    height:  Dimensions.get('window').height / 3,
+    width: Dimensions.get('window').width / 3,
+    borderRadius: Dimensions.get('window').height / 3,
     resizeMode: 'cover'
   },
   name: {
