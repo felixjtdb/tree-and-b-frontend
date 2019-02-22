@@ -10,5 +10,17 @@ export const testTrees =
       imageURL: "http://www.irishtreesociety.com/wp-content/uploads/irish-tree-society-feature.jpg",
       description: "me too!",
       location: 456
+    },
+    { id : 3,
+      name: 'ChOak',
+      imageURL: 'http://giantgag.net/wp-content/uploads/2014/02/funny-kinky-nature-tree-01.jpg',
+      description: "daddy tree",
+      location: 789
+    },
+    { id : 4,
+      name: 'smOak',
+      imageURL: "https://www.punmiris.com/himg/o.14000.jpg",
+      description: "a smokey cedar wood",
+      location: 420
     }
   ]
