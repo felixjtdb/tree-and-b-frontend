@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { StyleSheet, Button, View, Dimensions } from 'react-native'
 import { createStackNavigator, createAppContainer, StackActions, NavigationActions } from 'react-navigation';
 
-var navbarItemHeight = Dimensions.get('window').height / 10
-var navbarWidth = Dimensions.get('window').width / 5
-var navbarHeight = navbarItemHeight * 1.5
+var navbarWidth = Dimensions.get('window').width
+var navbarHeight = Dimensions.get('window').height / 10
 
 class Navbar extends Component {
   render() {
@@ -16,10 +15,10 @@ class Navbar extends Component {
           })
         }}/>
         <Button style={styles.navbar_item} title={'Forest!'} onPress={() => {
-            this.props.navigation.navigate('Forest', {
-              navigation: this.props.navigation
-            })
-          }}/>
+          this.props.navigation.navigate('Forest', {
+            navigation: this.props.navigation
+          })
+        }}/>
       </View>
     );
   }
@@ -29,18 +28,18 @@ export default Navbar;
 
 const styles = StyleSheet.create({
   navbar_container: {
-    flexDirection: 'column',
-    justifyContent: 'space-between',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     width: navbarWidth,
     height: navbarHeight,
     zIndex: 1,
     position: 'absolute',
-    top: 50,
+    bottom: 0,
     backgroundColor: '#b0b0b0'
 
   },
   navbar_item: {
-    height: navbarItemHeight,
+    height: navbarHeight,
     borderColor: '#6d2edc',
     borderRadius: 40
   }

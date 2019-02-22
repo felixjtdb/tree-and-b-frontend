@@ -18,8 +18,6 @@ export default class Tree extends Component {
   }
 }
 
-AppRegistry.registerComponent('App', () => App)
-
 const styles = StyleSheet.create({
   image: {
     margin: 'auto',
