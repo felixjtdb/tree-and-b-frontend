@@ -2,6 +2,7 @@ import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
 import Forest from './Forest'
 import TreeViewer from './TreeViewer'
+import ImageCapture from './ImageCapture'
 
 const Main = createSwitchNavigator({
   TreeViewer: {
@@ -9,6 +10,9 @@ const Main = createSwitchNavigator({
   },
   Forest: {
     screen: Forest
+  },
+  ImageCapture: {
+    screen: ImageCapture
   }
 },
 {
