@@ -1,20 +1,31 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
-import { Camera, Permissions } from 'expo';
+import { Camera, Location, Permissions } from 'expo';
 import Navbar from './Navbar.js'
 
 export default class ImageCapture extends React.Component {
   state = {
     hasCameraPermission: null,
+    location: null,
     type: Camera.Constants.Type.back,
   };
+
+  componentWillMount() {
+      this._getLocationAsync();
+    }
 
   async componentDidMount() {
     const { status } = await Permissions.askAsync(Permissions.CAMERA);
     this.setState({ hasCameraPermission: status === 'granted' });
   }
 
-  async takePhoto() {
+  _getLocationAsync = async () => {
+  let { status } = await Permissions.askAsync(Permissions.LOCATION);
+  let location = await Location.getCurrentPositionAsync({});
+  this.setState({ location: location });
+};
+
+  takePhoto = async () => {
      console.log('Button Pressed');
      if (this.camera) {
         console.log('Taking photo');
@@ -22,8 +33,8 @@ export default class ImageCapture extends React.Component {
         exif: true};
         await this.camera.takePictureAsync(options).then(photo => {
            photo.exif.Orientation = 1;
-            console.log(photo);
-            console.log("banananas")
+            console.log(this.state.location);
+            // TODO: send request to API to store image and location
             });
       }
      }
