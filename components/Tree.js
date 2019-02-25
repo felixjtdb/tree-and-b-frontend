@@ -7,7 +7,6 @@ export default class Tree extends Component {
       <React.Fragment>
         <Image
           style={styles.image}
-          resizeMode={"cover"}
           source={{ uri: this.props.imageURL }}
         />
         <Text style={styles.name}> {this.props.name} </Text>
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     height:  Dimensions.get('window').height / 3,
     width: Dimensions.get('window').width / 3,
     borderRadius: Dimensions.get('window').height / 3,
-    resizeMode: 'cover'
+    resizeMode: 'contain'
   },
   name: {
     color: 'red'

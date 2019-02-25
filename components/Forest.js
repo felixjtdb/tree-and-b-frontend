@@ -16,7 +16,7 @@ export default class Forest extends Component {
 
   renderItem(item) {
     return (
-      <Tree name={item.name} imageURL={item.imageURL} description={item.description} styling={styles.treeContainer}/>
+      <Tree key={item.id} name={item.name} imageURL={item.imageURL} description={item.description} styling={styles.treeContainer}/>
     )
   }
 
