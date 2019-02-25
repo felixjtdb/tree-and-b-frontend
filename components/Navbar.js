@@ -9,11 +9,6 @@ class Navbar extends Component {
   render() {
     return (
       <View style={styles.navbar_container}>
-        <Button style={styles.navbar_item} title={'Camera!'} onPress={() => {
-          this.props.navigation.navigate('ImageCapture', {
-            navigation: this.props.navigation
-          })
-        }}/>
         <Button style={styles.navbar_item} title={'Trees!'} onPress={() => {
           this.props.navigation.navigate('TreeViewer', {
             navigation: this.props.navigation
