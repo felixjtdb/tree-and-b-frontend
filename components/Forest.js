@@ -22,17 +22,15 @@ export default class Forest extends Component {
 
   render() {
     return (
-      <React.Fragment>
         <List style={styles.list}>
           <FlatList
             data={this.state.trees}
             renderItem={({ item }) => this.renderItem(item)}
             scrollable={true}
             style={styles.list}
+            keyExtractor={(item) => item.id.toString()}
           />
         </List>
-        <Navbar navigation={this.props.navigation}/>
-      </React.Fragment>
     );
   }
 }

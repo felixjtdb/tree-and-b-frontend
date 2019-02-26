@@ -72,7 +72,6 @@ export default class ImageCapture extends React.Component {
               </TouchableOpacity>
             </View>
           </Camera>
-          <Navbar navigation={this.props.navigation}/>
         </View>
       );
     }
