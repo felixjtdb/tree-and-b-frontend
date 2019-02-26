@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, TouchableHighlight, View, Dimensions, Image } from 'react-native'
 import { createStackNavigator, createAppContainer, StackActions, NavigationActions } from 'react-navigation';
 
-import treeViewerImage from '../assets/images/Treeviewer.png'
+import treeViewerImage from '../assets/images/TreeViewer.png'
 import forestImage from '../assets/images/Forest.png'
 
 var navbarWidth = Dimensions.get('window').width
@@ -12,7 +12,6 @@ class Navbar extends Component {
   render() {
     return (
       <View style={styles.navbar_container}>
-
         <TouchableHighlight style={styles.navbar_item}
           onPress={() => {
             this.props.navigation.navigate('TreeViewer', {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera, Location, Permissions } from 'expo';
-import Navbar from './Navbar.js'
 
 export default class ImageCapture extends React.Component {
   state = {
@@ -72,7 +71,6 @@ export default class ImageCapture extends React.Component {
               </TouchableOpacity>
             </View>
           </Camera>
-          <Navbar navigation={this.props.navigation}/>
         </View>
       );
     }

@@ -19,16 +19,12 @@ export default class TreeViewer extends Component {
 
   render() {
     return (
-      <React.Fragment key='TreeViewer'>
-        <SwipeCards style={styles.swipe_cards}
-          cards={this.state.trees}
-          renderCard={(treeData) => <Tree {...treeData}/> }
-
-          handleYup={this.saveToForest}
-          handleNope={this.burnTree}
-        />
-        <Navbar navigation={this.props.navigation} />
-      </React.Fragment>
+      <SwipeCards style={styles.swipe_cards}
+        cards={this.state.trees}
+        renderCard={(treeData) => <Tree {...treeData}/> }
+        handleYup={this.saveToForest}
+        handleNope={this.burnTree}
+      />
     );
   }
 
