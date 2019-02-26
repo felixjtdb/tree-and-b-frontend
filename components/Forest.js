@@ -4,7 +4,6 @@ import { List, ListItem } from 'react-native-elements'
 import { testTrees } from '../assets/testTrees.js'
 
 import Tree from './Tree.js'
-import Navbar from './Navbar.js'
 
 export default class Forest extends Component {
   constructor(props) {
