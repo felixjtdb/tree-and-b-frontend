@@ -3,18 +3,14 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native'
 import { testTrees } from '../assets/testTrees.js'
 
 import Tree from './Tree.js'
-import Navbar from './Navbar'
 
 import SwipeCards from 'react-native-swipe-cards';
 
 export default class TreeViewer extends Component {
-  constructor(props) {
-    super(props);
-    let { width, height } = Dimensions.get('window')
-
-    this.state = {
-      trees: testTrees
-    }
+  state = {
+    trees: testTrees,
+    liked: [],
+    disliked: []
   }
 
   render() {
@@ -22,18 +18,23 @@ export default class TreeViewer extends Component {
       <SwipeCards style={styles.swipe_cards}
         cards={this.state.trees}
         renderCard={(treeData) => <Tree {...treeData}/> }
-        handleYup={this.saveToForest}
-        handleNope={this.burnTree}
+
+        handleYup={this.saveToForest.bind(this)}
+        handleNope={this.burnTree.bind(this)}
       />
     );
   }
 
-  saveToForest() {
-    console.log('YEP')
+  saveToForest(index) {
+    this.setState({
+      liked: this.state.liked.concat(index["id"])
+    })
   }
 
-  burnTree() {
-    console.log('NOPE')
+  burnTree(index) {
+    this.setState({
+      disliked: this.state.disliked.concat(index["id"])
+    })
   }
 }
 
