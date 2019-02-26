@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Button, View, Dimensions } from 'react-native'
+import { StyleSheet, TouchableHighlight, View, Dimensions, Image } from 'react-native'
 import { createStackNavigator, createAppContainer, StackActions, NavigationActions } from 'react-navigation';
+
+import treeViewerImage from '../assets/images/Treeviewer.png'
+import forestImage from '../assets/images/Forest.png'
 
 var navbarWidth = Dimensions.get('window').width
 var navbarHeight = Dimensions.get('window').height / 10
@@ -9,16 +12,32 @@ class Navbar extends Component {
   render() {
     return (
       <View style={styles.navbar_container}>
-        <Button style={styles.navbar_item} title={'Trees!'} onPress={() => {
-          this.props.navigation.navigate('TreeViewer', {
-            navigation: this.props.navigation
-          })
-        }}/>
-        <Button style={styles.navbar_item} title={'Forest!'} onPress={() => {
-          this.props.navigation.navigate('Forest', {
-            navigation: this.props.navigation
-          })
-        }}/>
+
+        <TouchableHighlight style={styles.navbar_item}
+          onPress={() => {
+            this.props.navigation.navigate('TreeViewer', {
+              navigation: this.props.navigation
+            })
+          }}
+        >
+          <Image
+            style={[styles.navbar_item, styles.navbar_item_image]}
+            source={treeViewerImage}
+          />
+        </TouchableHighlight>
+
+       <TouchableHighlight style={styles.navbar_item}
+        onPress={() => {
+           this.props.navigation.navigate('Forest', {
+             navigation: this.props.navigation
+           })
+         }}
+        >
+          <Image
+            style={[styles.navbar_item, styles.navbar_item_image]}
+            source={forestImage}
+          />
+        </TouchableHighlight>
       </View>
     );
   }
@@ -40,7 +59,10 @@ const styles = StyleSheet.create({
   },
   navbar_item: {
     height: navbarHeight,
-    borderColor: '#6d2edc',
-    borderRadius: 40
+    width: navbarHeight,
+    borderRadius: navbarHeight
+  },
+  navbar_item_image: {
+    resizeMode: 'contain'
   }
 });
