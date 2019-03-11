@@ -5,7 +5,7 @@ import { saveUserToken } from '../actions';
 
 class Auth extends Component {
   static navigationOptions = {
-      title: 'Please sign in',
+    title: 'Please sign in',
   };
 
   render() {
