@@ -1,7 +1,7 @@
 export const testTrees =
   [ { id : 1,
       name: 'Oak',
-      imageURL: 'https://www.fast-growing-trees.com/images/P/Live-Oak-Tree-450w.jpg',
+      imageURL: 'https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Live-Oak-Tree-450w_grande.jpg?v=1549685103',
       description: "I'm a big ol tree",
       location: 123
     },
