@@ -34,9 +34,9 @@ export default class ImageCapture extends React.Component {
            photo.exif.Orientation = 1;
             console.log(this.state.location);
             // TODO: send request to API to store image and location
-            });
+        });
       }
-     }
+    }
 
   render() {
     const { hasCameraPermission } = this.state;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { Image, StyleSheet } from 'react-native'
 
 import treeViewerImage from '../assets/images/TreeViewer.png'
@@ -9,8 +9,10 @@ import cameraImage from '../assets/images/ImageCapture.png'
 import Forest from './Forest'
 import TreeViewer from './TreeViewer'
 import ImageCapture from './ImageCapture'
+import Auth from './Auth'
+import AuthLoading from './AuthLoading'
 
-const Main = createBottomTabNavigator({
+const App = createBottomTabNavigator({
   // RouteConfigs
   ImageCapture: {
     screen: ImageCapture,
@@ -44,7 +46,18 @@ const Main = createBottomTabNavigator({
 })
 
 
-export default createAppContainer(Main)
+const AppNavigator = createSwitchNavigator(
+    {
+        AuthLoading: AuthLoading,
+        Auth: Auth,
+        App: App,
+    },
+    {
+        initialRouteName: 'AuthLoading',
+    }
+);
+
+export const AppContainer = createAppContainer(AppNavigator)
 
 const styles = StyleSheet.create({
   navbar_item: {
