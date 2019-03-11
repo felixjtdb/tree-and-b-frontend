@@ -21,15 +21,13 @@ export default class Forest extends Component {
 
   render() {
     return (
-        <List style={styles.list}>
-          <FlatList
+        <FlatList
             data={this.state.trees}
             renderItem={({ item }) => this.renderItem(item)}
             scrollable={true}
             style={styles.list}
             keyExtractor={(item) => item.id.toString()}
-          />
-        </List>
+        />
     );
   }
 }
@@ -38,7 +36,6 @@ const styles = StyleSheet.create({
   list: {
     zIndex: 1,
     alignContent: 'center',
-    marginBottom: Dimensions.get('window').height / 10
   },
   treeContainer: {
     alignItems: 'center',

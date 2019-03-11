@@ -15,7 +15,10 @@
     "react-native-elements": "0.18.5",
     "react-native-swipe-cards": "^0.1.1",
     "react-navigation": "^3.3.0",
-    "react-swipeable-views-native": "^0.13.2"
+    "react-redux": "^6.0.1",
+    "react-swipeable-views-native": "^0.13.2",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-preset-expo": "^5.0.0",
